@@ -8,11 +8,14 @@ pipeline{
         file(name:'FILE',,description:'Some file to upload')
         password(name:'PASSWORD',defaultValue:'SECRET',description:'A secret password')
     }
+    options{
+        timestamps()
+    }
     stages{
         stage('string'){
             options{
 //                retry(3)
-                timeout(time:5,unit:'SECONDS')
+//                timeout(time:5,unit:'SECONDS')
             }
             steps{
                 echo "string $DEPLOY_ENV"
