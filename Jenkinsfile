@@ -6,7 +6,12 @@ pipeline{
    stages{
         stage('build'){
             steps{
-                build('hello-world')
+                build(job:"jenkins-parametrized-job",
+                parameters:
+                [string(name:'Nodes',value:"Linux"),
+                string(name:'Versions',value:"3.4"),
+                string(name:'Path',value:"/home/pencillr/builds/")])
+
                  echo "Hello world"
             }       
         }
