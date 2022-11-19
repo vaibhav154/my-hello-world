@@ -4,7 +4,7 @@ pipeline{
           timestamps()
    }
    triggers{
-        cron('26 11 * * *')
+        cron('*/2 * * *')
    }
    stages{
         stage('build'){
